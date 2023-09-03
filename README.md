@@ -1,2 +1,3 @@
 # launch-me
-https://github.com/negative-balance/launch-me
+
+https://negative-balance.github.io/launch-me/
