@@ -9,10 +9,14 @@
     <script src="confetti.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        [x-cloak] { display: none !important; }
+    </style>
 </head>
 <body class="bg-[#4c1e1b] min-h-screen grid place-items-center">
 
-<header class="absolute top-20">
+<header class="absolute top-12">
     <h1 class="text-white/75 text-4xl">Lorem ipsum dolor amet sit</h1>
 </header>
 
@@ -42,7 +46,8 @@
             id="demo"
             x-on:click="launch()"
             type="button"
-            class="text-white bg-[#8a4746] relative w-52 h-52 drop-shadow-2xl focus:outline-none font-medium rounded-full text-3xl flex justify-center items-center"
+            class="text-white bg-[#8a4746] border-2 border-[#592726] relative w-52 h-52 shadow-2xl focus:outline-none
+                font-medium rounded-full text-3xl flex justify-center items-center"
         >
             <svg
                 class="w-32 h-32"
@@ -53,6 +58,7 @@
         </button>
 
         <p
+            x-cloak
             x-show="launched"
             x-transition.duration.500ms
             class="text-5xl text-white"
