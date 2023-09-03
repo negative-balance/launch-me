@@ -6,11 +6,45 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script src="confetti.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
-<body>
-<h1 class="text-3xl font-bold underline">
-    Hello world!
-</h1>
+<body class="bg-[#4c1e1b]">
+<main x-data="{
+    removeButton(event) {
+        event.target.style.opacity = '0'
+
+        setTimeout(() => {
+            event.target.style.visibility = ''
+            event.target.style.opacity = '1'
+        }, 5e3);
+    },
+
+    init() {
+        // Pass in the id of an element
+        let confetti = new Confetti('demo');
+
+        // Edit given parameters
+        confetti.setCount(150);
+        confetti.setSize(2);
+        confetti.setPower(50);
+        confetti.setFade(false);
+        confetti.destroyTarget(true);
+    }
+}">
+    <section class="min-h-screen grid place-items-center">
+        <div id="demo" class="relative p-2">
+<!--            <div class="bg-[#993333] animate-pulse absolute rounded-full inset-0"> </div>-->
+            <button
+                type="button"
+                class="text-[#ffd4d4] bg-[#8a4746] relative w-64 h-64 drop-shadow-2xl focus:outline-none font-medium rounded-full text-4xl"
+            >
+                Launch
+            </button>
+        </div>
+    </section>
+</main>
+
 </body>
 </html>
